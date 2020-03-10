@@ -72,4 +72,16 @@ extension PostsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        let post = posts[indexPath.row]
+        print("selected: \(post.title)")
+        
+    
+      let detailVC = storyboard?.instantiateViewController(identifier: "DetailViewController")  { (coder) in
+        return DetailViewController(coder: coder, post: post)
+        }
+        present(detailVC!, animated: true)
+        
+    }
 }
