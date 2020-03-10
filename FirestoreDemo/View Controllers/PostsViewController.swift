@@ -21,6 +21,8 @@ class PostsViewController: UIViewController {
         postsTableView.delegate = self
         postsTableView.dataSource = self
         loadPosts()
+        // register cell as xib
+        postsTableView.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,16 +50,23 @@ class PostsViewController: UIViewController {
 
 // MARK: -Table View Delegate
 
-extension PostsViewController: UITableViewDelegate {}
+extension PostsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+    
+}
 
 // MARK: -Table View Data Source
 
 extension PostsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostCell else {
+            fatalError("could not downcast to postcell")
+        }
         let post = posts[indexPath.row]
-        cell.textLabel?.text = post.title
-        cell.detailTextLabel?.text = post.body
+        cell.configureCell(post: post)
+        
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
