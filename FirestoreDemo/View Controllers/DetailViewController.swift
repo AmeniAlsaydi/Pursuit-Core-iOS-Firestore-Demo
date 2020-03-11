@@ -14,8 +14,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     private var post: Post
+    private var comments = [Comment]()
     
     init?(coder: NSCoder, post: Post) {
         self.post = post
@@ -28,6 +30,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        tableView.dataSource = self
+        tableView.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -38,6 +42,19 @@ class DetailViewController: UIViewController {
         usernameLabel.text = post.userUID
         dateLabel.text = Date().description
     }
+}
 
+extension DetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        comments.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath)
+        return cell
+    }
+}
 
+extension DetailViewController: UITableViewDelegate {
+    
 }

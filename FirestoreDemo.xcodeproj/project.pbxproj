@@ -12,6 +12,7 @@
 		B7AC45D62416EA160036F392 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45D52416EA160036F392 /* PostCell.swift */; };
 		B7AC45D82417B68F0036F392 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45D72417B68F0036F392 /* DetailViewController.swift */; };
 		B7AC45DA24183D9E0036F392 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7AC45D924183D9E0036F392 /* GoogleService-Info.plist */; };
+		B7AC45DC241964FC0036F392 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45DB241964FC0036F392 /* Comment.swift */; };
 		CD261C3D2375DBF700E08B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD261C3C2375DBF700E08B04 /* AppDelegate.swift */; };
 		CD261C3F2375DBF700E08B04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD261C3E2375DBF700E08B04 /* SceneDelegate.swift */; };
 		CD261C412375DBF700E08B04 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD261C402375DBF700E08B04 /* LoginViewController.swift */; };
@@ -48,6 +49,7 @@
 		B7AC45D52416EA160036F392 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		B7AC45D72417B68F0036F392 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B7AC45D924183D9E0036F392 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B7AC45DB241964FC0036F392 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		CD261C392375DBF700E08B04 /* FirestoreDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD261C3C2375DBF700E08B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD261C3E2375DBF700E08B04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				CD261C682375FBEC00E08B04 /* Post.swift */,
+				B7AC45DB241964FC0036F392 /* Comment.swift */,
 				CD261C6A2375FC8800E08B04 /* PersistedUser.swift */,
 			);
 			path = Models;
@@ -370,6 +373,7 @@
 				CD261C412375DBF700E08B04 /* LoginViewController.swift in Sources */,
 				CD261C692375FBED00E08B04 /* Post.swift in Sources */,
 				CD261C3D2375DBF700E08B04 /* AppDelegate.swift in Sources */,
+				B7AC45DC241964FC0036F392 /* Comment.swift in Sources */,
 				CD261C3F2375DBF700E08B04 /* SceneDelegate.swift in Sources */,
 				CD261C632375E30300E08B04 /* PostsViewController.swift in Sources */,
 				CD261C652375E31000E08B04 /* CreateNewPostViewController.swift in Sources */,

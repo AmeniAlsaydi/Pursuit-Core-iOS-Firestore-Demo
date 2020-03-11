@@ -39,7 +39,7 @@ struct Post {
 //                print("issue date")
 //                return nil
 //        }
-        
+//
         self.title = title
         self.body = body
         self.userUID = userUID
