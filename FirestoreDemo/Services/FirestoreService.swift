@@ -15,8 +15,8 @@ class FirestoreService {
             } else {
                 let posts = querySnapshot!.documents.compactMap { (snapShot) -> Post? in
                     // it goes through the posts but does not return a post - issue with initializer
-                    guard let uuid = UUID(uuidString: snapShot.documentID) else { return nil }
-                    return Post(from: snapShot.data(), andUUID: uuid)
+                    //guard let uuid = UUID(uuidString: snapShot.documentID) else { return nil }
+                    return Post(from: snapShot.data())
                 }
                 onCompletion(.success(posts))
             }
@@ -34,6 +34,7 @@ class FirestoreService {
     }
     
     func create(_ post: Post, onCompletion: @escaping (Result<Void, Error>) -> Void) {
+        
         db.collection("posts").document(post.uuidStr).setData(post.fieldsDict) { err in
             if let err = err {
                 onCompletion(.failure(err))

@@ -5,29 +5,46 @@ struct Post {
     let body: String
     let uuid: UUID
     let userUID: String
-    let createdDate: Date
+    //let createdDate: Date
     
     init(title: String, body: String, userUID: String, createdDate: Date) {
         self.title = title
         self.body = body
         self.uuid = UUID()
         self.userUID = userUID
-        self.createdDate = createdDate
+        //self.createdDate = createdDate
         
     }
     
-    init?(from dict: [String: Any], andUUID uuid: UUID) {
-        guard let title = dict["title"] as? String,
-            let body = dict["body"] as? String,
-            let userUID = dict["userUID"] as? String,
-            let createdDate = dict["createdDate"] as? Date else {
+    init?(from dict: [String: Any]) {
+        guard let title = dict["title"] as? String else {
+                print("issue title")
                 return nil
         }
+        guard let body = dict["body"] as? String else {
+                print("issue body")
+                return nil
+        }
+        guard let userUID = dict["userUID"] as? String else {
+                print("issue userUID")
+                return nil
+        }
+        guard let uuidString = dict["uuid"] as? String, let uuid =  UUID(uuidString: uuidString) else {
+                print(dict["uuid"] ?? "hello")
+                print("issue uuid")
+                return nil
+        }
+//        guard let createdDate = dict["createdDate"] as? Date else {
+//            print(dict["createdDate"] ?? "no date")
+//                print("issue date")
+//                return nil
+//        }
+        
         self.title = title
         self.body = body
         self.userUID = userUID
         self.uuid = uuid
-        self.createdDate = createdDate
+        //self.createdDate = createdDate
     }
     
     var uuidStr: String {
@@ -40,7 +57,7 @@ struct Post {
             "body": body,
             "uuid": uuidStr,
             "userUID": userUID,
-            "createdDate": createdDate
+            //"createdDate": createdDate
         ]
     }
 }
