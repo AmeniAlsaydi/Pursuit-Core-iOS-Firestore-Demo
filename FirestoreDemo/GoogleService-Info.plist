@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>991494537749-nt3kk4artcpri03qq4pim9u97p7ubrua.apps.googleusercontent.com</string>
+	<string>22056885647-c3lhvolj3fe57v0mshe76ictk67tfns7.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.991494537749-nt3kk4artcpri03qq4pim9u97p7ubrua</string>
+	<string>com.googleusercontent.apps.22056885647-c3lhvolj3fe57v0mshe76ictk67tfns7</string>
 	<key>API_KEY</key>
-	<string>AIzaSyARIHVWbp1KONJdI83J66tG3I9pI5jRgU8</string>
+	<string>AIzaSyBcPK-nHszTTcVY_0l8j0DNlYkju6QvNGk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>991494537749</string>
+	<string>22056885647</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>pursuit.FirestoreDemo</string>
 	<key>PROJECT_ID</key>
-	<string>firestoredemo-9325d</string>
+	<string>fir-store-demo-38bdf</string>
 	<key>STORAGE_BUCKET</key>
-	<string>firestoredemo-9325d.appspot.com</string>
+	<string>fir-store-demo-38bdf.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:991494537749:ios:509f37211fd94fb565441c</string>
+	<string>1:22056885647:ios:556886c7208fd825447ffa</string>
 	<key>DATABASE_URL</key>
-	<string>https://firestoredemo-9325d.firebaseio.com</string>
+	<string>https://fir-store-demo-38bdf.firebaseio.com</string>
 </dict>
 </plist>

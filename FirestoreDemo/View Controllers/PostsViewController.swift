@@ -11,6 +11,7 @@ class PostsViewController: UIViewController {
     var posts = [Post]() {
         didSet {
             postsTableView.reloadData()
+            print(posts.count)
         }
     }
     
@@ -20,7 +21,7 @@ class PostsViewController: UIViewController {
         super.viewDidLoad()
         postsTableView.delegate = self
         postsTableView.dataSource = self
-        loadPosts()
+        //loadPosts()
         // register cell as xib
         postsTableView.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postCell")
     }
@@ -66,6 +67,8 @@ extension PostsViewController: UITableViewDataSource {
         }
         let post = posts[indexPath.row]
         cell.configureCell(post: post)
+        cell.getUserInfo(userID: post.userUID)
+      
         
         return cell
     }

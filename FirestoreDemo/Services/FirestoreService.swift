@@ -14,6 +14,7 @@ class FirestoreService {
                 onCompletion(.failure(err))
             } else {
                 let posts = querySnapshot!.documents.compactMap { (snapShot) -> Post? in
+                    // it goes through the posts but does not return a post - issue with initializer
                     guard let uuid = UUID(uuidString: snapShot.documentID) else { return nil }
                     return Post(from: snapShot.data(), andUUID: uuid)
                 }

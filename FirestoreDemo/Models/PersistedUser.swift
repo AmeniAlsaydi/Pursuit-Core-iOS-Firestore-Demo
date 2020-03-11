@@ -19,3 +19,11 @@ struct PersistedUser {
         ]
     }
 }
+
+extension PersistedUser {
+    init(_ dictionary: [String: Any]) {
+        self.name = dictionary["name"] as? String ?? "no name"
+        self.email = dictionary["email"] as? String ?? "no email"
+        self.uid = dictionary["uid"] as? String ?? "no id"
+    }
+}

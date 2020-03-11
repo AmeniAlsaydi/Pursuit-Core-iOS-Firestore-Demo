@@ -18,7 +18,7 @@ class CreateNewPostViewController: UIViewController {
             return
         }
         
-        let newPost = Post(title: title, body: body, userUID: user.uid)
+        let newPost = Post(title: title, body: body, userUID: user.uid, createdDate: Date())
         
         FirestoreService.manager.create(newPost) { [weak self] (result) in
             self?.handlePostResponse(withResult: result)
