@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class DetailViewController: UIViewController {
     
@@ -15,6 +16,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
+    private lazy var dateFormatter: DateFormatter = {
+          let formatter = DateFormatter()
+          formatter.dateFormat = "EEEE, MMM, d, h:m a"
+          return formatter
+      }()
     
     private var post: Post
     private var comments = [Comment]()
@@ -39,8 +46,24 @@ class DetailViewController: UIViewController {
     private func updateUI() {
         titleLabel.text = post.title
         bodyLabel.text = post.body
-        usernameLabel.text = post.userUID
-        dateLabel.text = Date().description
+        // usernameLabel.text = post.userUID // should be the users email 
+        dateLabel.text = dateFormatter.string(from: post.createdDate.dateValue())
+        
+        let db = Firestore.firestore()
+        let postsRef = db.collection("users")
+        
+        postsRef.document(post.userUID).getDocument { (snapshot , error) in
+            if let error = error {
+                print("\(error)")
+            } else if let snapshot = snapshot {
+                guard let dictData = snapshot.data() else {
+                    return
+                }
+                let user = PersistedUser(dictData)
+                self.usernameLabel.text = "POSTED BY: \(user.email ?? "Anonymous")"
+            }
+        }
+        
     }
 }
 

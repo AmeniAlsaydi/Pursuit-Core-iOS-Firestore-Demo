@@ -1,18 +1,19 @@
 import Foundation
+import FirebaseFirestore
 
 struct Post {
     let title: String
     let body: String
     let uuid: UUID
     let userUID: String
-    //let createdDate: Date
+    let createdDate: Timestamp
     
-    init(title: String, body: String, userUID: String, createdDate: Date) {
+    init(title: String, body: String, userUID: String, createdDate: Timestamp) {
         self.title = title
         self.body = body
         self.uuid = UUID()
         self.userUID = userUID
-        //self.createdDate = createdDate
+        self.createdDate = createdDate
         
     }
     
@@ -34,17 +35,17 @@ struct Post {
                 print("issue uuid")
                 return nil
         }
-//        guard let createdDate = dict["createdDate"] as? Date else {
-//            print(dict["createdDate"] ?? "no date")
-//                print("issue date")
-//                return nil
-//        }
-//
+        guard let createdDate = dict["createdDate"] as? Timestamp else {
+            print(dict["createdDate"] ?? "no date")
+                print("issue date")
+                return nil
+        }
+
         self.title = title
         self.body = body
         self.userUID = userUID
         self.uuid = uuid
-        //self.createdDate = createdDate
+        self.createdDate = createdDate
     }
     
     var uuidStr: String {
@@ -57,7 +58,7 @@ struct Post {
             "body": body,
             "uuid": uuidStr,
             "userUID": userUID,
-            //"createdDate": createdDate
+            "createdDate": createdDate
         ]
     }
 }

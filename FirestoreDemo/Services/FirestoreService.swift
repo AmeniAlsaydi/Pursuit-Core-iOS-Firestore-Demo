@@ -18,7 +18,7 @@ class FirestoreService {
                     //guard let uuid = UUID(uuidString: snapShot.documentID) else { return nil }
                     return Post(from: snapShot.data())
                 }
-                onCompletion(.success(posts))
+                onCompletion(.success(posts.sorted {$0.createdDate.dateValue() > $1.createdDate.dateValue()} ))  // sorts from most recent to least recent?
             }
         }
     }

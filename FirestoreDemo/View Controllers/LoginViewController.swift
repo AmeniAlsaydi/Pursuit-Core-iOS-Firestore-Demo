@@ -47,7 +47,7 @@ class LogInViewController: UIViewController {
             performSegue(withIdentifier: "loginSegue", sender: nil)
         case let .failure(error):
             presentGenericAlert(withTitle: "Login Failure",
-                                andMessage: "An error occurred while logging in: \(error)")
+                                andMessage: "An error occurred while logging in: \(error.localizedDescription)")
         }
     }
     
@@ -59,7 +59,7 @@ class LogInViewController: UIViewController {
             }
         case let .failure(error):
             presentGenericAlert(withTitle: "Create user failure",
-                                andMessage: "An error occurred while creating an account: \(error)")
+                                andMessage: "An error occurred while creating an account: \(error.localizedDescription)")
         }
     }
     
