@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var commentTextField: UITextField!
     
     private lazy var dateFormatter: DateFormatter = {
           let formatter = DateFormatter()
@@ -39,8 +40,8 @@ class DetailViewController: UIViewController {
         updateUI()
         tableView.dataSource = self
         tableView.delegate = self
+        commentTextField.delegate = self
 
-        // Do any additional setup after loading the view.
     }
     
     private func updateUI() {
@@ -68,15 +69,12 @@ class DetailViewController: UIViewController {
     
     @IBAction func postButtonPressed(_ sender: UIButton) {
         
-        // in db services add a post comment function and call it here. it shoud take in the current post and use the info as properties of the comment
-        /*
-         comment will have
-         - text
-         - created by
-         - date posted
-         
-         */
-        FirestoreService.manager.postComment(post: post, comment: "comment 1") { (result) in
+        guard let comment = commentTextField.text, !comment.isEmpty else {
+            presentGenericAlert(withTitle: "No comment", andMessage: "Write up a comment in the field")
+            return
+        }
+        
+        FirestoreService.manager.postComment(post: post, comment: comment) { (result) in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -86,13 +84,10 @@ class DetailViewController: UIViewController {
             case .success:
                 DispatchQueue.main.async {
                     self.presentGenericAlert(withTitle: "Comment posted", andMessage: "success")
+                    self.commentTextField.text = ""
                 }
             }
         }
-        
-        
-        
-        
     }
     
 }
@@ -110,4 +105,10 @@ extension DetailViewController: UITableViewDataSource {
 
 extension DetailViewController: UITableViewDelegate {
     
+}
+
+extension DetailViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        resignFirstResponder()
+    }
 }

@@ -49,7 +49,7 @@ struct Post {
     }
     
     var uuidStr: String {
-        return uuid.uuidString // used when creating a post (document) ID
+        return uuid.uuidString // used when creating a post (document) ID -- weve been using documentID from a doc ref created from firebase 
     }
     
     var fieldsDict: [String: Any] {

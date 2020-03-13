@@ -367,6 +367,7 @@
                     <navigationItem key="navigationItem" id="9R6-eE-IhY"/>
                     <connections>
                         <outlet property="bodyLabel" destination="Dtx-fm-9Yc" id="izb-aY-nNG"/>
+                        <outlet property="commentTextField" destination="HOm-WQ-WrU" id="Kam-CJ-nhZ"/>
                         <outlet property="dateLabel" destination="4cO-uD-bfk" id="wAf-p8-esW"/>
                         <outlet property="tableView" destination="6Fn-xd-vPC" id="WT4-dd-VY5"/>
                         <outlet property="titleLabel" destination="oH5-T1-iqt" id="dWP-Q7-Nj1"/>
