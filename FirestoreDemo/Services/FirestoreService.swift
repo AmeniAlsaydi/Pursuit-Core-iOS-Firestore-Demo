@@ -48,14 +48,6 @@ class FirestoreService {
     
     public func postComment(post: Post, comment: String, completion: @escaping (Result<Bool, Error>) -> ()) {
         
-        // in db services add a post comment function and call it here. it shoud take in the current post and use the info as properties of the comment
-               /*
-                comment will have
-                - text
-                - created by
-                - date posted
-                */
-        
         guard let user = Auth.auth().currentUser, let email = user.email  else { return }
         
         let docRef =  db.collection("posts").document(post.uuidStr).collection("comments").document() // creates doc idea
@@ -67,9 +59,6 @@ class FirestoreService {
                completion(.success(true))
             }
         }
-        
-        
-        
     }
     
     // MARK:- Private Properties

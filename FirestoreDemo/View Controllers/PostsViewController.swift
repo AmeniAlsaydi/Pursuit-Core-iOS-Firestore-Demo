@@ -53,7 +53,7 @@ class PostsViewController: UIViewController {
 
 extension PostsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 110
     }
     
 }
@@ -66,7 +66,7 @@ extension PostsViewController: UITableViewDataSource {
             fatalError("could not downcast to postcell")
         }
         let post = posts[indexPath.row]
-        cell.configureCell(post: post)
+        cell.configureCell(for: post)
         cell.getUserInfo(userID: post.userUID)
       
         

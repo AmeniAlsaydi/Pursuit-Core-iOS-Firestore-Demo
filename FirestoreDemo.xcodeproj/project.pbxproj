@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		963B03445F8CC8B7B4FE4D9A /* Pods_FirestoreDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BF07C2C5BF10823C6122D7 /* Pods_FirestoreDemoTests.framework */; };
 		B74AF8D9241BA9EB00D30957 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74AF8D8241BA9EB00D30957 /* Alert.swift */; };
+		B74AF901241C493600D30957 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74AF900241C493600D30957 /* Date.swift */; };
 		B7AC45D42416E6510036F392 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7AC45D32416E6500036F392 /* PostCell.xib */; };
 		B7AC45D62416EA160036F392 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45D52416EA160036F392 /* PostCell.swift */; };
 		B7AC45D82417B68F0036F392 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45D72417B68F0036F392 /* DetailViewController.swift */; };
@@ -47,6 +48,7 @@
 		8B90C2004E6DA21BE25B4140 /* Pods_FirestoreDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD8DD5128FAB835B5AC6D34 /* Pods-FirestoreDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreDemo.release.xcconfig"; path = "Target Support Files/Pods-FirestoreDemo/Pods-FirestoreDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B74AF8D8241BA9EB00D30957 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		B74AF900241C493600D30957 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		B7AC45D32416E6500036F392 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		B7AC45D52416EA160036F392 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		B7AC45D72417B68F0036F392 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				B74AF8D8241BA9EB00D30957 /* Alert.swift */,
+				B74AF900241C493600D30957 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				CD261C692375FBED00E08B04 /* Post.swift in Sources */,
 				CD261C3D2375DBF700E08B04 /* AppDelegate.swift in Sources */,
 				B7AC45DC241964FC0036F392 /* Comment.swift in Sources */,
+				B74AF901241C493600D30957 /* Date.swift in Sources */,
 				CD261C3F2375DBF700E08B04 /* SceneDelegate.swift in Sources */,
 				CD261C632375E30300E08B04 /* PostsViewController.swift in Sources */,
 				CD261C652375E31000E08B04 /* CreateNewPostViewController.swift in Sources */,

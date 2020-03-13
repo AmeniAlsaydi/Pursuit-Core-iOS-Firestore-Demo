@@ -14,12 +14,17 @@ class PostCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
     
-    public func configureCell(post: Post) {
+    public func configureCell( for post: Post) {
         titleLabel.text = post.title
         bodyLabel.text = post.body
-        //usernameLabel.text = post.userUID
+    }
+    
+    public func configureCell(for comment: Comment) {
+        titleLabel.text = comment.commentedBy
+        bodyLabel.text = comment.text
+        bottomLabel.text = "Posted on " + comment.commentDate.dateValue().dateString("dd.MM.yy, h:mm a")
         
     }
     
@@ -35,7 +40,7 @@ class PostCell: UITableViewCell {
                     return
                 }
                 let user = PersistedUser(dictData)
-                self.usernameLabel.text = "POSTED BY: \(user.email ?? "Anonymous")"
+                self.bottomLabel.text = "POSTED BY: \(user.email ?? "Anonymous")"
                 //print(user.email)
             }
         }
