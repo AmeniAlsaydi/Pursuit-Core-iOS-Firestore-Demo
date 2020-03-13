@@ -80,11 +80,6 @@ class LogInViewController: UIViewController {
         // TODO: Complete implementation
         return true
     }
-    
-    private func presentGenericAlert(withTitle title: String, andMessage message: String) {
-        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
-    }
+
 }
 

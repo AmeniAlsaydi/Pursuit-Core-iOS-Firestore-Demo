@@ -14,6 +14,7 @@ struct Comment {
     let comment: String
     let datePosted: Date
     let uuid: UUID
+    
     init(userId: String, postId: String, comment: String, datePosted: Date) {
         self.userId = userId
         self.postId = postId

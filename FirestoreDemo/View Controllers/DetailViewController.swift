@@ -65,6 +65,36 @@ class DetailViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func postButtonPressed(_ sender: UIButton) {
+        
+        // in db services add a post comment function and call it here. it shoud take in the current post and use the info as properties of the comment
+        /*
+         comment will have
+         - text
+         - created by
+         - date posted
+         
+         */
+        FirestoreService.manager.postComment(post: post, comment: "comment 1") { (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.presentGenericAlert(withTitle: "Try again", andMessage: error.localizedDescription)
+                }
+                
+            case .success:
+                DispatchQueue.main.async {
+                    self.presentGenericAlert(withTitle: "Comment posted", andMessage: "success")
+                }
+            }
+        }
+        
+        
+        
+        
+    }
+    
 }
 
 extension DetailViewController: UITableViewDataSource {
